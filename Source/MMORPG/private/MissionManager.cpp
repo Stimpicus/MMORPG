@@ -1,6 +1,9 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "MissionManager.h"
+#include "MissionBase.h"
+#include "FactionDataAsset.h"
+#include "TerritoryActor.h"
 
 UMissionBase* UMissionManager::CreateMission(TSubclassOf<UMissionBase> MissionClass, ATerritoryActor* Territory, UFactionDataAsset* Faction)
 {

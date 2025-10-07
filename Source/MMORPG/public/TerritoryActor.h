@@ -4,8 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "FactionDataAsset.h"
 #include "TerritoryActor.generated.h"
+
+class UFactionDataAsset;
 
 /**
  * Actor representing a territory in the game world

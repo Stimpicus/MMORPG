@@ -1,6 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "MissionBase.h"
+#include "FactionDataAsset.h"
+#include "TerritoryActor.h"
 
 UMissionBase::UMissionBase()
 {

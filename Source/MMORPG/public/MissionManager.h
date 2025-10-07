@@ -4,10 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Subsystems/GameInstanceSubsystem.h"
-#include "MissionBase.h"
-#include "FactionDataAsset.h"
-#include "TerritoryActor.h"
 #include "MissionManager.generated.h"
+
+class UMissionBase;
+class UFactionDataAsset;
+class ATerritoryActor;
 
 /**
  * Mission Manager Subsystem

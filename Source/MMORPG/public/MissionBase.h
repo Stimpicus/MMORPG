@@ -4,9 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "FactionDataAsset.h"
-#include "TerritoryActor.h"
 #include "MissionBase.generated.h"
+
+class UFactionDataAsset;
+class ATerritoryActor;
 
 /**
  * Enum representing mission types
