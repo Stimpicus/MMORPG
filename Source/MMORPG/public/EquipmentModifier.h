@@ -3,8 +3,22 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "PlayerSkillsComponent.h"
 #include "EquipmentModifier.generated.h"
+
+/**
+ * Enum defining all skill types available in the game
+ */
+UENUM(BlueprintType)
+enum class ESkillType : uint8
+{
+	Toughness			UMETA(DisplayName = "Toughness"),
+	ManaEfficiency		UMETA(DisplayName = "Mana Efficiency"),
+	StaminaEfficiency	UMETA(DisplayName = "Stamina Efficiency"),
+	MeleeCombat			UMETA(DisplayName = "Melee Combat"),
+	RangedCombat		UMETA(DisplayName = "Ranged Combat"),
+	MagicalAbility		UMETA(DisplayName = "Magical Ability"),
+	ResourceGathering	UMETA(DisplayName = "Resource Gathering")
+};
 
 /**
  * Enum for attribute types that can be modified by equipment

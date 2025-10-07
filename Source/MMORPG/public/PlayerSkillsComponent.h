@@ -4,22 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "EquipmentModifier.h"
 #include "PlayerSkillsComponent.generated.h"
-
-/**
- * Enum defining all skill types available in the game
- */
-UENUM(BlueprintType)
-enum class ESkillType : uint8
-{
-	Toughness			UMETA(DisplayName = "Toughness"),
-	ManaEfficiency		UMETA(DisplayName = "Mana Efficiency"),
-	StaminaEfficiency	UMETA(DisplayName = "Stamina Efficiency"),
-	MeleeCombat			UMETA(DisplayName = "Melee Combat"),
-	RangedCombat		UMETA(DisplayName = "Ranged Combat"),
-	MagicalAbility		UMETA(DisplayName = "Magical Ability"),
-	ResourceGathering	UMETA(DisplayName = "Resource Gathering")
-};
 
 /**
  * Structure representing a single skill
