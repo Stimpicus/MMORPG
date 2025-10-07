@@ -103,7 +103,7 @@ if (Result.bSuccess)
 
 ## Integration Example
 
-Here's how to integrate the system into a player character:
+An example player character (`ExamplePlayerCharacter`) is provided that demonstrates the integration of all components. Here's how to integrate the system into your own player character:
 
 ```cpp
 // In your player character class header
@@ -187,11 +187,42 @@ for (const auto& Pair : SaveGame->SavedSkills)
 
 The system is designed to be easily extended:
 
-1. **New Resource Types**: Add entries to EResourceType enumeration
-2. **New Skills**: Add entries to EGatheringSkillType enumeration
+1. **New Resource Types**: Add entries to EResourceType enumeration in ResourceTypes.h
+2. **New Skills**: Add entries to EGatheringSkillType enumeration in ResourceTypes.h
 3. **Custom Gathering Logic**: Override or extend ResourceGatheringSubsystem methods
 4. **Networking**: Components are ready for replication with appropriate UPROPERTY flags
-5. **Resource Node Variants**: Subclass ResourceNodeActor for specialized behavior
+5. **Resource Node Variants**: Subclass ResourceNodeActor for specialized behavior (e.g., rare nodes, time-limited nodes)
+6. **Visual Feedback**: Add mesh components to ResourceNodeActor or create Blueprint variants
+
+### Example: Creating a Custom Resource Node
+
+```cpp
+UCLASS()
+class ARareResourceNode : public AResourceNodeActor
+{
+    GENERATED_BODY()
+    
+public:
+    ARareResourceNode()
+    {
+        ResourceType = EResourceType::Crystal;
+        CurrentQuantity = 10;
+        MaxQuantity = 10;
+        bRegenerates = false; // Rare nodes don't regenerate
+        ExperiencePerGather = 50; // More experience
+    }
+};
+```
+
+## Files Created
+
+- **ResourceTypes.h**: Core enumerations and structures
+- **ResourceNodeActor.h/.cpp**: Resource node actor implementation
+- **InventoryComponent.h/.cpp**: Inventory management component
+- **SkillProgressionComponent.h/.cpp**: Skill progression tracking component
+- **ResourceGatheringSubsystem.h/.cpp**: Centralized gathering coordination
+- **ExamplePlayerCharacter.h/.cpp**: Example integration in a player character
+- **RESOURCE_GATHERING_SYSTEM.md**: This documentation file
 
 ## Blueprint Support
 
